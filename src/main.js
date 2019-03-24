@@ -9,6 +9,16 @@ import '@/assets/css/main.css'
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 /* eslint-disable no-new */
+Vue.directive('document-click', {
+  bind(el,binding,vnode){
+    // console.log('-----bind--------',el,binding,vnode);
+    document.addEventListener('click',binding.value,false)
+  },
+
+  inserted(){
+    // console.log('-----inserted--------');
+  }
+})
 new Vue({
   el: '#app',
   router,
